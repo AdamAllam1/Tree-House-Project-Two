@@ -1,19 +1,6 @@
 
 
-
-
-
-
-
-
-/*
-Create the `showPage` function
-This function will create and insert/append the elements needed to display a "page" of nine students
-*/
-
-
-
-
+/** Shows 9 students on the page */
 
 function showPage(list, page) {
    const startIndex = (page * 9) - 9;
@@ -37,13 +24,8 @@ function showPage(list, page) {
    }
 }
 
-/*
-Create the `addPagination` function
-This function will create and insert/append the elements needed for the pagination buttons
-*/
 
-
-
+/** Adds the Pagination buttons */
 
 function addPagination(list) { 
    const numOfPages = Math.ceil(list.length / 9);
@@ -64,8 +46,7 @@ function addPagination(list) {
 }
 
 
-
-// Call functions
+/** calls both functions */
 
 showPage(data, 1);
 addPagination(data);
