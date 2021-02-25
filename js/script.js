@@ -22,7 +22,7 @@ function showPage(list, page) {
    studentList.innerHTML = '';
    for (let i = 0; i < list.length; i++){
       if (i >= startIndex && i < endIndex ) {
-         let studentItem = `<li class="student-item cf">
+         const studentItem = `<li class="student-item cf">
          <div class="student-details">
            <img class="avatar" src='${data[i].picture.large}' alt="Profile Picture">
            <h3>${data[i].name.first}</h3>
@@ -55,10 +55,10 @@ function addPagination(list) {
       document.querySelector('button').className = 'active';
    }
    linkList.addEventListener('click', (e) => {
-      if (e.tagName === 'BUTTON'){
+      if (e.target.tagName === 'BUTTON'){
          document.querySelector('.active').className = '';
-         e.className = 'active';
-         showPage(list, e.textContent);
+         e.target.className = 'active';
+         showPage(list, e.target.textContent);
       }
    })
 }
